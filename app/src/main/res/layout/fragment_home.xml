@@ -46,6 +46,7 @@
     </LinearLayout>
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linear_header"></TextView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ramdon_meal_card"
+        android:id="@+id/random_meal_card"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_150sdp"
         app:cardCornerRadius="@dimen/_10sdp"
@@ -75,6 +76,8 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+
+        android:textColor="@color/black"
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,8 +85,8 @@
         android:fontFamily="@font/myfont"
         android:text="Over popular items"
         android:textSize="@dimen/_17sdp"
-        app:layout_constraintStart_toStartOf="@+id/ramdon_meal_card"
-        app:layout_constraintTop_toBottomOf="@+id/ramdon_meal_card"></TextView>
+        app:layout_constraintStart_toStartOf="@+id/random_meal_card"
+        app:layout_constraintTop_toBottomOf="@+id/random_meal_card"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="@dimen/_5sdp"
@@ -94,6 +97,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"></androidx.recyclerview.widget.RecyclerView>
 
     <TextView
+
+        android:textColor="@color/black"
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,7 +106,7 @@
         android:fontFamily="@font/myfont"
         android:text="Category"
         android:textSize="@dimen/_17sdp"
-        app:layout_constraintStart_toStartOf="@+id/ramdon_meal_card"
+        app:layout_constraintStart_toStartOf="@+id/random_meal_card"
         app:layout_constraintTop_toBottomOf="@+id/rec_view_meals_popular"></TextView>
 
     <androidx.cardview.widget.CardView
