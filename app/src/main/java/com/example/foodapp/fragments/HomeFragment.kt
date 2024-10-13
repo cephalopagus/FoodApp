@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.foodapp.activites.MealActivity
@@ -18,6 +17,13 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var homeMvvm:HomeViewModel
+    private lateinit var randonMeal:Meal
+
+    companion object{
+        const val MEAL_ID = "com.example.foodapp.fragments.idMeal"
+        const val MEAL_NAME = "com.example.foodapp.fragments.nameMeal"
+        const val MEAL_THUMB = "com.example.foodapp.fragments.thumbMeal"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +49,9 @@ class HomeFragment : Fragment() {
     private fun onRandomMealClick() {
         binding.randomMealCard.setOnClickListener {
             val intent = Intent(activity, MealActivity::class.java)
+            intent.putExtra(MEAL_ID, randonMeal.idMeal)
+            intent.putExtra(MEAL_NAME, randonMeal.strMeal)
+            intent.putExtra(MEAL_THUMB, randonMeal.strMealThumb)
             startActivity(intent)
         }
     }
@@ -53,6 +62,7 @@ class HomeFragment : Fragment() {
             Glide.with(this@HomeFragment)
                 .load(value.strMealThumb)
                 .into(binding.imgRandomMeal)
+            this.randonMeal = value
         }
     }
 
